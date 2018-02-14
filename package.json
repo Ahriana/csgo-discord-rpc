@@ -1,0 +1,22 @@
+{
+  "name": "csgo-rpc",
+  "version": "1.0.0",
+  "description": "CS:GO RPC",
+  "main": "src/main.js",
+  "scripts": {
+    "app": "electron src/main.js",
+    "build:mac": "node build.js mac",
+    "build:win": "node build.js win",
+    "build:linux": "node build.js linux",
+    "build": "node build.js all"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "discord-rpc": "github:devsnek/discord-rpc"
+  },
+  "devDependencies": {
+    "electron": "^1.7.9",
+    "electron-packager": "^9.1.0"
+  }
+}
