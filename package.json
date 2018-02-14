@@ -14,9 +14,5 @@
   "license": "MIT",
   "dependencies": {
     "discord-rpc": "github:devsnek/discord-rpc"
-  },
-  "devDependencies": {
-    "electron": "^1.7.9",
-    "electron-packager": "^9.1.0"
   }
 }
