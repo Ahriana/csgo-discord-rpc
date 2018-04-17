@@ -9,22 +9,24 @@ rpc.login(ClientId).catch(console.error);
 
 const server = http.createServer(async (req, res) => {
     if (req.method == 'POST') {
-        // console.log('Handling POST request...');
         res.writeHead(200, { 'Content-Type': 'text/html' });
 
-        var body = '';
+        let body = '';
         req.on('data', (data) => { body += data; });
         req.on('end', () => {
-            body = JSON.parse(body);
-            // console.log(body);
-            res.end('');
-            setRP(body);
+            try {
+                body = JSON.parse(body);
+                res.end('');
+                setRP(body);
+            } catch (error) {
+                console.error(error)
+            }
+
         });
     } else {
         console.log('Not expecting other request types...');
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        var html = `<html><body>HTTP Server at http://${host}:${port}</body></html>`;
-        res.end(html);
+        res.writeHead(401, { 'Content-Type': 'text/html' });
+        res.end('');
     }
 });
 
@@ -67,6 +69,5 @@ function getMap(map) {
 }
 
 function confirm(rp) {
-    // console.log('setting RP', rp);
     rpc.setActivity(rp).catch(console.error);
 }
