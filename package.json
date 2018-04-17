@@ -4,11 +4,7 @@
   "description": "CS:GO RPC",
   "main": "src/main.js",
   "scripts": {
-    "app": "electron src/main.js",
-    "build:mac": "node build.js mac",
-    "build:win": "node build.js win",
-    "build:linux": "node build.js linux",
-    "build": "node build.js all"
+    "run": "node src/main.js"
   },
   "author": "",
   "license": "MIT",
